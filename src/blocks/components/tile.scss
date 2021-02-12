@@ -1,0 +1,317 @@
+.tile {
+	display: flex;
+	flex-direction: column;
+	&__row {
+		&:last-of-type {
+			margin-bottom: 5px;
+		}
+	}
+	&__row_main {
+		order: 2;
+	}
+	&__row_catalog {
+		order: 1;
+	}
+	&__row_product {
+		display: none;
+	}
+	&__row_other {
+		order: 4;
+	}
+
+	&__list {
+		width: auto;
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: -5px;
+		margin-right: -5px;
+	}
+
+	&__list_main {
+		.tile__col {
+			width: 50%;
+			&:nth-of-type(3){
+				width: 100%;
+			}
+		}
+	}
+
+	&__list_main-reverse{
+		.tile__col{
+			&:nth-of-type(1) {
+			}
+			&:nth-of-type(2) {
+				order: -1;
+				width: 100%;
+			}
+			&:nth-of-type(3) {
+				width: 50%;
+				order: 5;
+			}
+			&:nth-of-type(4) {
+				order: -1;
+			}
+			&:nth-of-type(5) {
+				order: -1;
+			}
+		}
+	}
+
+	&__list_square {
+		display: block;
+		@extend %clearfix;
+		.tile__col{
+			&:nth-of-type(1) {
+				float: left;
+				width: 66.6666%;
+			}
+			&:nth-of-type(2) {
+				float: right;
+			}
+			&:nth-of-type(3) {
+				float: right;
+			}
+		}
+	}
+	&__list_square-reverse{
+		.tile__col{
+			&:nth-of-type(1) {
+				float: right;
+				width: 66.6666%;
+			}
+			&:nth-of-type(2) {
+				float: left;
+			}
+			&:nth-of-type(3) {
+				float: left;
+			}
+		}
+	}
+
+
+	&__inner {
+		width: 100%;
+		//height: 100%;
+		display: flex;
+		align-items: flex-end;
+		height: 155px;
+		background-color: $gray;
+		padding: 9px;
+		overflow: auto;
+	}
+
+	&__col {
+		width: 33.333%;
+		padding-left: 5px;
+		padding-right: 5px;
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+
+	&__title {
+		font-size: 14px;
+		line-height: 20px;
+		position: relative;
+		z-index: 2;
+	}
+
+	&__item{
+		display: block;
+		color: $black;
+		text-decoration: none;
+	}
+	&__item_square {
+		position: relative;
+		&:before {
+			content: '';
+			display: block;
+			padding-top: 100%;
+		}
+
+		.tile__inner {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+		}
+	}
+
+	&__item_big {
+		.tile__inner{
+			display: block;
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+		.tile__title{
+			font-size: 18px;
+			line-height: 26px;
+		}
+	}
+
+	&__item_gray {
+		.tile__inner {
+			background-color: $grayDark;
+			color: #fff;
+		}
+	}
+
+	&__item_pink {
+		.tile__inner {
+			background-color: $pink;
+		}
+	}
+
+	&__item_blue {
+		.tile__inner {
+			background-color: $blue;
+		}
+	}
+
+	&__item_green {
+		.tile__inner {
+			background-color: $green;
+		}
+	}
+
+	&__item_red{
+		.tile__inner {
+			background-color: $red;
+		}
+	}
+
+	&__item_yellow{
+		.tile__inner {
+			background-color: $yellow;
+		}
+	}
+
+	&__item_yellow{
+		.tile__inner {
+			background-color: $yellow;
+		}
+	}
+	&__item_light{
+		.tile__inner {
+			background-color: $lightCyan;
+		}
+	}
+
+}
+
+@media only screen and (min-width: $mobile) {
+	.tile {
+		&__row_main {
+			order: 1;
+		}
+		&__row_catalog {
+			order: 1;
+		}
+		&__row_product {
+			display: block;
+			order: 3;
+		}
+
+		&__list_main{
+			.tile__col{
+				width: 33.3333%;
+				&:nth-of-type(1) {
+					order: 1
+				}
+				&:nth-of-type(2) {
+					order: 2;
+				}
+				&:nth-of-type(3) {
+					order: 3;
+					width: 66.6666%;
+				}
+				&:nth-of-type(4) {
+					order: 2;
+				}
+				&:nth-of-type(5) {
+					order: 4;
+				}
+			}
+		}
+
+		&__list_main-reverse{
+			.tile__col{
+				width: 33.3333%;
+				&:nth-of-type(1) {
+					order: 1
+				}
+				&:nth-of-type(2) {
+					order: 2;
+					width: 66.6666%;
+				}
+				&:nth-of-type(3) {
+					order: 2;
+					width: 33.3333%;
+				}
+			}
+		}
+		&__inner {
+			padding: 15px;
+		}
+		&__item_big {
+			.tile__inner {
+				padding: 30px 25px;
+			}
+		}
+		&__item_product {
+			.tile__inner {
+				background-color: #fff;
+			}
+			&:hover {
+				.tile__bg {
+					filter: blur(14px)
+				}
+				.tile__icon {
+					opacity: 1;
+				}
+			}
+		}
+		&__bg {
+			position: absolute;
+			top: 0;
+			right: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+			transition: all 0.3s ease-in;
+		}
+		&__icon {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: $red;
+			width: 60px;
+			height: 60px;
+			background-color: #fff;
+			-webkit-border-radius: 50%;
+			-moz-border-radius: 50%;
+			border-radius: 50%;
+			font-size: 36px;
+			z-index: 3;
+			opacity: 0;
+			transition: all 0.3s ease-in;
+		}
+	}
+}
+
+
+@media only screen and (min-width: $tablet-big) {
+	.tile {
+		&__item_feature {
+			.tile__inner {
+				padding: 50px;
+			}
+		}
+	}
+}

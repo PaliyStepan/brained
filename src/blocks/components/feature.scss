@@ -1,0 +1,33 @@
+.feature {
+	&__list {
+		margin: 0;
+		padding: 0;
+	}
+	&__item {
+		display: flex;
+		align-items: flex-end;
+		margin-bottom: 8px;
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+		p {
+			font-size: 14px;
+			margin-bottom: 0;
+			&:first-of-type {
+				margin-right: 10px;
+			}
+			&:last-of-type {
+				margin-left: 10px;
+				order: 3;
+			}
+		}
+		&:before {
+			content: '';
+			flex-grow: 1;
+			min-width: 50px;
+			order: 2;
+			border-bottom: 1px dashed #71787F;
+			transform: translateY(-4px);
+		}
+	}
+}

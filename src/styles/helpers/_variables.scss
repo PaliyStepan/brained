@@ -1,13 +1,22 @@
 //colors
 
-//$main-color: #48BD00 !default;
+$black: #323C46 !default;
+$gray: #F1F2F2 !default;
+$grayDark: #71787F !default;
+$pink: #FFC1C1 !default;
+$green: #C3F3E2 !default;
+$yellow: #FFF48E !default;
+$red: #EE6956 !default;
+$blue: #85B1F9 !default;
+$lightCyan: #D9EAFF !default;
 
 
 
 /// Breakpoints map
-// $desktop-max: 1439px;
-// $desktop-min: 1279px;
-// $desktop: 991px;
-// $tablet: 767px;
-// $mobile-land: 575px;
-// $mobile: 374px;
+ $desktop-max: 1440px;
+ $desktop-min: 1280px;
+ $tablet-big: 992px;
+ $tablet: 768px;
+ $mobile-land: 575px;
+ $mobile: 480px;
+ $mobile-small: 375px;
